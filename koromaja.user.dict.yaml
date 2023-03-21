@@ -1,0 +1,17 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 變換辭典에追加하고싶은單語를여기에追加하세요
+
+---
+name: koromaja
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 例
+RIME	ra fim	1
+胡桃	ho du	1
+桐生코코	dong saeng ko ko	10000000
+東雪蓮	dong seor ryeon	10000000

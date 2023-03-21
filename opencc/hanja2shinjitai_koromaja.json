@@ -1,0 +1,22 @@
+{
+  "name": "Korean Hanja 2 Japanese Shinjitai 4 Korean romaja input scheme",
+  "segmentation": {
+    "type": "mmseg",
+    "dict": {
+      "type": "text",
+      "file": "ShinjitaiPhrases_tongpin.txt"
+    }
+  },
+  "conversion_chain": [{
+    "dict": {
+      "type": "group",
+      "dicts": [{
+        "type": "text",
+        "file": "ShinjitaiPhrases_tongpin.txt"
+      }, {
+        "type": "text",
+        "file": "ShinjitaiVariants_tongpin.txt"
+      }]
+    }
+  }]
+}

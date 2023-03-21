@@ -1,0 +1,13 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: koromaja
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - koromaja.user
+  - koromaja.hangul
+  - koromaja.hanja
+...
