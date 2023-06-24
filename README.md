@@ -60,4 +60,4 @@ Author: lazy fox chan
 License: [GNU Lesser General Public License v2.1](https://github.com/lazyfoxchan/rime-koromaja/blob/master/LICENSE)  
   
 Hanja conversion dictionary was converted from [libhangul](https://github.com/libhangul/libhangul/tree/main/data/hanja) project  
-More information about the original license and copyright can be found in the comments on the header line of `koromaja.hanja.dict.yaml`.
+More information about the original license and copyright can be found in the comments on the header line of `koromaja.hanja.dict.yaml`
