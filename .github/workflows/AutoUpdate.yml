@@ -1,4 +1,4 @@
-name: AutoUpdate (If no changes will fail)
+name: AutoUpdate
 
 on:
   # 毎年4月1日0時に実行(韓国時間)
@@ -9,7 +9,7 @@ on:
 
 # ジョブ設定
 jobs:
-  build:
+  AutoUpdateJob:
     runs-on: ubuntu-latest
     steps:
       # チェックアウト
@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
       # Pythonインストール
       - name: Set up Python 3.11
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11
       # pip
@@ -27,11 +27,16 @@ jobs:
       # ConvertHanjaDict.py実行
       - name: Run ConvertHanjaDict.py
         run: python convert_dict/ConvertHanjaDict.py
-      # プッシュ(変更がなければ失敗)
-      - name: Push (If no changes will fail)
+      # ゴミファイル削除
+      - name: Remove trash files
+        run: rm -rf hanja.txt freq-hanja.txt freq-hanjaeo.txt convert_dict/__pycache__/
+      # プッシュ
+      - name: Push
         run: |
           git config user.name  "actions-user"
           git config user.email "action@github.com"
           git add koromaja.hanja.dict.yaml
-          git commit -m "Auto Update"
-          git push origin master
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Auto Update"
+            git push origin master
+          fi
